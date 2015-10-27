@@ -22,12 +22,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		4DADD2E81BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DADD2E71BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m */; settings = {ASSET_TAGS = (); }; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		E82EF3191BD9659000AF7270 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82EF3151BD9659000AF7270 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
 		E82EF31A1BD9659000AF7270 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82EF3161BD9659000AF7270 /* DigitsKit.framework */; settings = {ASSET_TAGS = (); }; };
 		E82EF31B1BD9659000AF7270 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E82EF3171BD9659000AF7270 /* DigitsKitResources.bundle */; settings = {ASSET_TAGS = (); }; };
 		E82EF31C1BD9659000AF7270 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82EF3181BD9659000AF7270 /* TwitterCore.framework */; settings = {ASSET_TAGS = (); }; };
-		E82EF32A1BD9695C00AF7270 /* DGTAuthenticateButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = E82EF3291BD9695C00AF7270 /* DGTAuthenticateButtonView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,14 +130,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyDigitsDemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyDigitsDemo/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		4DADD2E61BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTDigitsAuthenticateManager.h; sourceTree = "<group>"; };
+		4DADD2E71BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTDigitsAuthenticateManager.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		E82EF3151BD9659000AF7270 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		E82EF3161BD9659000AF7270 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
 		E82EF3171BD9659000AF7270 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
 		E82EF3181BD9659000AF7270 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
-		E82EF3281BD9695C00AF7270 /* DGTAuthenticateButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DGTAuthenticateButtonView.h; path = MyDigitsDemo/DGTAuthenticateButtonView.h; sourceTree = "<group>"; };
-		E82EF3291BD9695C00AF7270 /* DGTAuthenticateButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DGTAuthenticateButtonView.m; path = MyDigitsDemo/DGTAuthenticateButtonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,8 +247,6 @@
 		13B07FAE1A68108700A75B9A /* MyDigitsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E82EF3281BD9695C00AF7270 /* DGTAuthenticateButtonView.h */,
-				E82EF3291BD9695C00AF7270 /* DGTAuthenticateButtonView.m */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -256,6 +254,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				4DADD2E61BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.h */,
+				4DADD2E71BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m */,
 			);
 			name = MyDigitsDemo;
 			sourceTree = "<group>";
@@ -556,7 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				E82EF32A1BD9695C00AF7270 /* DGTAuthenticateButtonView.m in Sources */,
+				4DADD2E81BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
