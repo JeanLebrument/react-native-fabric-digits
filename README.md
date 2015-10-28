@@ -98,3 +98,7 @@ DigitsAuthenticateManager.logout();
 ## Roadmap
 
 - [ ] Android support.
+
+## Licence
+
+**MIT**
