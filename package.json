@@ -1,0 +1,28 @@
+{
+  "name": "react-native-fabric-digits",
+  "version": "1.0.5",
+  "description": "Fabric Digits wrapper to use it in React-Native",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeanLebrument/react-native-fabric-digit.git"
+  },
+  "keywords": [
+    "react-native",
+    "js",
+    "fabric",
+    "digits"
+  ],
+  "author": "Jean Lebrument <jean.lebrument@gmail.com> (https://github.com/JeanLebrument/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JeanLebrument/react-native-fabric-digit/issues"
+  },
+  "homepage": "https://github.com/JeanLebrument/react-native-fabric-digit#readme"
+}

@@ -5,8 +5,8 @@
 'use strict';
 
 var React = require('react-native');
-var DigitsLoginButton = require('./DigitsLoginButton');
-var DigitsLogoutButton = require('./DigitsLogoutButton');
+var Digits = require('react-native-fabric-digits');
+var { DigitsLoginButton, DigitsLogoutButton } = Digits;
 var {
   AppRegistry,
   StyleSheet,

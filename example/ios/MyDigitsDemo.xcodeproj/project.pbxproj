@@ -22,12 +22,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		4DADD2E81BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DADD2E71BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m */; settings = {ASSET_TAGS = (); }; };
+		4DDF81331BE0CA3A00712308 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDF81301BE0CA3A00712308 /* DigitsKit.framework */; settings = {ASSET_TAGS = (); }; };
+		4DDF81341BE0CA3A00712308 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDF81311BE0CA3A00712308 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
+		4DDF81351BE0CA3A00712308 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDF81321BE0CA3A00712308 /* TwitterCore.framework */; settings = {ASSET_TAGS = (); }; };
+		4DDF81371BE0CB8C00712308 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF81361BE0CB8C00712308 /* DigitsKitResources.bundle */; settings = {ASSET_TAGS = (); }; };
+		4DDF819A1BE0E01900712308 /* libRNFabricDigits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDF81991BE0DFF700712308 /* libRNFabricDigits.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		E82EF3191BD9659000AF7270 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82EF3151BD9659000AF7270 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
-		E82EF31A1BD9659000AF7270 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82EF3161BD9659000AF7270 /* DigitsKit.framework */; settings = {ASSET_TAGS = (); }; };
-		E82EF31B1BD9659000AF7270 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E82EF3171BD9659000AF7270 /* DigitsKitResources.bundle */; settings = {ASSET_TAGS = (); }; };
-		E82EF31C1BD9659000AF7270 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82EF3181BD9659000AF7270 /* TwitterCore.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +94,13 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		4DDF81981BE0DFF700712308 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DDF81941BE0DFF700712308 /* RNFabricDigits.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4D8BECAE1BDFF0FB000A1462;
+			remoteInfo = RNFabricDigits;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -130,14 +137,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyDigitsDemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyDigitsDemo/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		4DADD2E61BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTDigitsAuthenticateManager.h; sourceTree = "<group>"; };
-		4DADD2E71BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTDigitsAuthenticateManager.m; sourceTree = "<group>"; };
+		4DDF81301BE0CA3A00712308 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
+		4DDF81311BE0CA3A00712308 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		4DDF81321BE0CA3A00712308 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		4DDF81361BE0CB8C00712308 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
+		4DDF81941BE0DFF700712308 /* RNFabricDigits.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFabricDigits.xcodeproj; path = "../node_modules/react-native-fabric-digits/ios/RNFabricDigits.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		E82EF3151BD9659000AF7270 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		E82EF3161BD9659000AF7270 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
-		E82EF3171BD9659000AF7270 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
-		E82EF3181BD9659000AF7270 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +160,8 @@
 			files = (
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
+				4DDF81331BE0CA3A00712308 /* DigitsKit.framework in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
-				E82EF31A1BD9659000AF7270 /* DigitsKit.framework in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
@@ -163,8 +169,9 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				E82EF3191BD9659000AF7270 /* Fabric.framework in Frameworks */,
-				E82EF31C1BD9659000AF7270 /* TwitterCore.framework in Frameworks */,
+				4DDF81341BE0CA3A00712308 /* Fabric.framework in Frameworks */,
+				4DDF81351BE0CA3A00712308 /* TwitterCore.framework in Frameworks */,
+				4DDF819A1BE0E01900712308 /* libRNFabricDigits.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +261,6 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				4DADD2E61BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.h */,
-				4DADD2E71BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m */,
 			);
 			name = MyDigitsDemo;
 			sourceTree = "<group>";
@@ -264,6 +269,14 @@
 			isa = PBXGroup;
 			children = (
 				146834041AC3E56700842450 /* libReact.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DDF81951BE0DFF700712308 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF81991BE0DFF700712308 /* libRNFabricDigits.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,6 +292,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4DDF81941BE0DFF700712308 /* RNFabricDigits.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -326,10 +340,10 @@
 		E82EF31D1BD9659F00AF7270 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E82EF3151BD9659000AF7270 /* Fabric.framework */,
-				E82EF3161BD9659000AF7270 /* DigitsKit.framework */,
-				E82EF3171BD9659000AF7270 /* DigitsKitResources.bundle */,
-				E82EF3181BD9659000AF7270 /* TwitterCore.framework */,
+				4DDF81361BE0CB8C00712308 /* DigitsKitResources.bundle */,
+				4DDF81301BE0CA3A00712308 /* DigitsKit.framework */,
+				4DDF81311BE0CA3A00712308 /* Fabric.framework */,
+				4DDF81321BE0CA3A00712308 /* TwitterCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -439,6 +453,10 @@
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
+				{
+					ProductGroup = 4DDF81951BE0DFF700712308 /* Products */;
+					ProjectRef = 4DDF81941BE0DFF700712308 /* RNFabricDigits.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -505,6 +523,13 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		4DDF81991BE0DFF700712308 /* libRNFabricDigits.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFabricDigits.a;
+			remoteRef = 4DDF81981BE0DFF700712308 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -533,7 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E82EF31B1BD9659000AF7270 /* DigitsKitResources.bundle in Resources */,
+				4DDF81371BE0CB8C00712308 /* DigitsKitResources.bundle in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -556,7 +581,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				4DADD2E81BDE9A2900FD83D6 /* RCTDigitsAuthenticateManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
