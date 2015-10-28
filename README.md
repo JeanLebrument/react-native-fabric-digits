@@ -25,7 +25,7 @@ This package provide three classes: `DigitsAuthenticateMaanger`, `DigitsLoginBut
 
 You can simply use the login and logout buttons provided to trigger the `authentication` or `logout` flow as bellow: 
 
-```
+```javascript
 var Digits = require('react-native-fabric-digits');
 var { DigitsLoginButton, DigitsLogoutButton } = Digits;
 
@@ -81,7 +81,7 @@ completion: function(error, response) {
 
 Or you can directly use methods from the `DigitsAuthenticateManager` class:
 
-```
+```javascript
 var Digits = require('react-native-fabric-digits');
 var { DigitsAuthenticateManager } = Digits;
 
