@@ -23,7 +23,7 @@ You can try the test project in the `example` directory. Don't forget to run `np
 
 This package provide three classes: `DigitsAuthenticateMaanger`, `DigitsLoginButton` (optional) and `DigitsLogoutButton` (optional).
 
-You can simply use the login and logout buttons provided to trigger the `authentication` or `logout` flow as bellow: 
+You can simply use the login and logout buttons provided to trigger the `authentication` or `logout` flows as bellow: 
 
 ```javascript
 var Digits = require('react-native-fabric-digits');
