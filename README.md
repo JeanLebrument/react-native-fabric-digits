@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Fabric Digits wrapper to use it with React-Native.**
+**Fabric Digits wrapper for React-Native.**
 
 Special thanks to [jpdriver](https://github.com/jpdriver) for his tutorial on [how to integrate Digits in a React-Native project](https://medium.com/p/getting-started-with-digits-and-react-native-f79b22439416).
 
