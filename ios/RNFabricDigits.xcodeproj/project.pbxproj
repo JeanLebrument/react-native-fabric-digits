@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D8BECBE1BDFF2BA000A1462 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBB1BDFF2BA000A1462 /* DigitsKit.framework */; settings = {ASSET_TAGS = (); }; };
-		4D8BECBF1BDFF2BA000A1462 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBC1BDFF2BA000A1462 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
-		4D8BECC01BDFF2BA000A1462 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBD1BDFF2BA000A1462 /* TwitterCore.framework */; settings = {ASSET_TAGS = (); }; };
-		4DDF81701BE0D8F400712308 /* RNFabricDigitsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF816F1BE0D8F400712308 /* RNFabricDigitsManager.m */; settings = {ASSET_TAGS = (); }; };
+		4D8BECBE1BDFF2BA000A1462 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBB1BDFF2BA000A1462 /* DigitsKit.framework */; };
+		4D8BECBF1BDFF2BA000A1462 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBC1BDFF2BA000A1462 /* Fabric.framework */; };
+		4D8BECC01BDFF2BA000A1462 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBD1BDFF2BA000A1462 /* TwitterCore.framework */; };
+		4DDF81701BE0D8F400712308 /* RNFabricDigitsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF816F1BE0D8F400712308 /* RNFabricDigitsManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -182,7 +182,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -218,7 +218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
