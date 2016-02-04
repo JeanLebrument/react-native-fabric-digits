@@ -1,6 +1,6 @@
 var React = require('react-native');
 var { TouchableHighlight, Text, PropTypes } = React;
-var DigitsAuthenticateManager = require('./DigitsAuthenticateManager');
+var DigitsManager = require("react-native").NativeModules.DigitsManager;
 
 var DigitsLoginButton = React.createClass({
   propTypes: {
@@ -12,7 +12,7 @@ var DigitsLoginButton = React.createClass({
   },
 
   buttonPressed() {
-    DigitsAuthenticateManager.authenticateDigitsWithOptions(this.props.options, this.props.completion)
+    DigitsManager.authenticateDigitsWithOptions(this.props.options, this.props.completion)
   },
 
   render() {
