@@ -11,7 +11,7 @@ var DigitsLogoutButton = React.createClass({
   },
 
   buttonPressed() {
-    DigitsManager.logout()
+    DigitsManager.logout();
     this.props.completion(null, {});
   },
 

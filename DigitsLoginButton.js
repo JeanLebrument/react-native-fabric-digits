@@ -12,7 +12,13 @@ var DigitsLoginButton = React.createClass({
   },
 
   buttonPressed() {
-    DigitsManager.authenticateDigitsWithOptions(this.props.options, this.props.completion)
+    DigitsManager.launchAuthentication(this.props.options).then((responseData) => {
+      console.log("[Digits] Login Successful", responseData);
+      this.props.completion(null, responseData);
+    }).catch((error) => {
+      console.error("[Digits] Login Error", error);
+      this.props.completion(error, null);
+    });
   },
 
   render() {

@@ -6,8 +6,8 @@
 
 var React = require('react-native');
 
-var DigitsLoginButton = require('./DigitsLoginButton');
-var DigitsLogoutButton = require('./DigitsLogoutButton');
+var Digits = require('react-native-fabric-digits');
+var { DigitsLoginButton, DigitsLogoutButton } = Digits;
 
 var {
   AppRegistry,
@@ -17,7 +17,7 @@ var {
   TouchableHighlight
 } = React;
 
-var MyDigitsDemo = React.createClass({
+var Test = React.createClass({
   getInitialState: function() {
     return { logged: false, error: false, response: {} };
   },
@@ -46,7 +46,7 @@ var MyDigitsDemo = React.createClass({
           textStyle={styles.DigitsAuthenticateButtonText}/>
       </View>) : (<DigitsLoginButton
         options={{
-          title: "Login with your hateful phone",
+          title: "Logging in is great",
           phoneNumber: "+61",
           appearance: {
             backgroundColor: {
@@ -104,4 +104,5 @@ var styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
-AppRegistry.registerComponent('MyDigitsDemo', () => MyDigitsDemo);
+
+AppRegistry.registerComponent('Test', () => Test);
