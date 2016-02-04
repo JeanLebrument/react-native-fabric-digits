@@ -5,31 +5,84 @@
 'use strict';
 
 var React = require('react-native');
+
+var DigitsLoginButton = require('./DigitsLoginButton');
+var DigitsLogoutButton = require('./DigitsLogoutButton');
+
 var {
   AppRegistry,
   StyleSheet,
   Text,
   View,
+  TouchableHighlight
 } = React;
 
 var MyDigitsDemo = React.createClass({
+  getInitialState: function() {
+    return { logged: false, error: false, response: {} };
+  },
+
+  completion: function(error, response) {
+    if (error && error.code !== 1) {
+      this.setState({ logged: false, error: true, response: {} });
+    } else if (response) {
+      var logged = JSON.stringify(response) === '{}' ? false : true;
+      this.setState({ logged: logged, error: false, response: response });
+    }
+  },
+
   render: function() {
+    var error = this.state.error ? <Text>An error occured.</Text> : null;
+    var content = this.state.logged ? 
+      (<View>
+        <Text>
+          Auth Token: {this.state.response.authToken}{'\n'}
+          Auth Token Secret: {this.state.response.authTokenSecret}{'\n\n'}
+        </Text>
+        <DigitsLogoutButton
+          completion={this.completion}
+          text="Logout"
+          buttonStyle={styles.DigitsAuthenticateButton}
+          textStyle={styles.DigitsAuthenticateButtonText}/>
+      </View>) : (<DigitsLoginButton
+        options={{
+          title: "Login with your hateful phone",
+          phoneNumber: "+61",
+          appearance: {
+            backgroundColor: {
+              hex: "#ffffff",
+              alpha: 1.0
+            },
+            accentColor: {
+              hex: "#43a16f",
+              alpha: 0.7
+            },
+            headerFont: {
+              name: "Arial",
+              size: 16
+            },
+            labelFont: {
+              name: "Helvetica",
+              size: 18
+            },
+            bodyFont: {
+              name: "Helvetica",
+              size: 16
+            }
+          }
+        }}
+        completion={this.completion}
+        text="Login (Do it)"
+        buttonStyle={styles.DigitsAuthenticateButton}
+        textStyle={styles.DigitsAuthenticateButtonText}/>);
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
+        {error}
+        {content}
       </View>
     );
   }
 });
-
 var styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -37,16 +90,18 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  DigitsAuthenticateButton: {
+    height: 50,
+    width: 230,
+    backgroundColor: '#13988A',
+    justifyContent: 'center',
+    borderRadius: 5
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  DigitsAuthenticateButtonText: {
+    fontSize: 16,
+    color: '#fff',
+    alignSelf: 'center',
+    fontWeight: 'bold'
+  }
 });
-
 AppRegistry.registerComponent('MyDigitsDemo', () => MyDigitsDemo);

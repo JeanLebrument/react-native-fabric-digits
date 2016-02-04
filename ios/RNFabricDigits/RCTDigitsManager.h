@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "RCTBridgeModule.h"
 
-@interface RNFabricDigitsManager : NSObject <RCTBridgeModule>
+@interface RCTDigitsManager : NSObject <RCTBridgeModule>
 
 @end
