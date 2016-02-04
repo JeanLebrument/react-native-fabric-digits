@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D8BECBE1BDFF2BA000A1462 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBB1BDFF2BA000A1462 /* DigitsKit.framework */; settings = {ASSET_TAGS = (); }; };
-		4D8BECBF1BDFF2BA000A1462 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBC1BDFF2BA000A1462 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
-		4D8BECC01BDFF2BA000A1462 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBD1BDFF2BA000A1462 /* TwitterCore.framework */; settings = {ASSET_TAGS = (); }; };
-		4DDF81701BE0D8F400712308 /* RNFabricDigitsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF816F1BE0D8F400712308 /* RNFabricDigitsManager.m */; settings = {ASSET_TAGS = (); }; };
+		4D8BECBE1BDFF2BA000A1462 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBB1BDFF2BA000A1462 /* DigitsKit.framework */; };
+		4D8BECBF1BDFF2BA000A1462 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBC1BDFF2BA000A1462 /* Fabric.framework */; };
+		4D8BECC01BDFF2BA000A1462 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBD1BDFF2BA000A1462 /* TwitterCore.framework */; };
+		4DDF81701BE0D8F400712308 /* RCTDigitsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF816F1BE0D8F400712308 /* RCTDigitsManager.m */; };
+		F8078FED1C62FA1000E8F8A3 /* RCTDigitsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDF816E1BE0D8F400712308 /* RCTDigitsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,12 +27,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4D8BECAE1BDFF0FB000A1462 /* libRNFabricDigits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNFabricDigits.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D8BECAE1BDFF0FB000A1462 /* libRCTDigitsManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTDigitsManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8BECBB1BDFF2BA000A1462 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
 		4D8BECBC1BDFF2BA000A1462 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4D8BECBD1BDFF2BA000A1462 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
-		4DDF816E1BE0D8F400712308 /* RNFabricDigitsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFabricDigitsManager.h; sourceTree = "<group>"; };
-		4DDF816F1BE0D8F400712308 /* RNFabricDigitsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFabricDigitsManager.m; sourceTree = "<group>"; };
+		4DDF816E1BE0D8F400712308 /* RCTDigitsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTDigitsManager.h; sourceTree = "<group>"; };
+		4DDF816F1BE0D8F400712308 /* RCTDigitsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTDigitsManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +52,7 @@
 		4D8BECA51BDFF0FB000A1462 = {
 			isa = PBXGroup;
 			children = (
-				4DDF816D1BE0D8F400712308 /* RNFabricDigits */,
+				4DDF816D1BE0D8F400712308 /* RCTDigitsManager */,
 				4D8BECBA1BDFF2AD000A1462 /* Frameworks */,
 				4D8BECAF1BDFF0FB000A1462 /* Products */,
 			);
@@ -60,7 +61,7 @@
 		4D8BECAF1BDFF0FB000A1462 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4D8BECAE1BDFF0FB000A1462 /* libRNFabricDigits.a */,
+				4D8BECAE1BDFF0FB000A1462 /* libRCTDigitsManager.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,33 +76,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4DDF816D1BE0D8F400712308 /* RNFabricDigits */ = {
+		4DDF816D1BE0D8F400712308 /* RCTDigitsManager */ = {
 			isa = PBXGroup;
 			children = (
-				4DDF816E1BE0D8F400712308 /* RNFabricDigitsManager.h */,
-				4DDF816F1BE0D8F400712308 /* RNFabricDigitsManager.m */,
+				4DDF816E1BE0D8F400712308 /* RCTDigitsManager.h */,
+				4DDF816F1BE0D8F400712308 /* RCTDigitsManager.m */,
 			);
-			path = RNFabricDigits;
+			path = RCTDigitsManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		F8078FEC1C62FA0300E8F8A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8078FED1C62FA1000E8F8A3 /* RCTDigitsManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		4D8BECAD1BDFF0FB000A1462 /* RNFabricDigits */ = {
+		4D8BECAD1BDFF0FB000A1462 /* RCTDigitsManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4D8BECB71BDFF0FB000A1462 /* Build configuration list for PBXNativeTarget "RNFabricDigits" */;
+			buildConfigurationList = 4D8BECB71BDFF0FB000A1462 /* Build configuration list for PBXNativeTarget "RCTDigitsManager" */;
 			buildPhases = (
 				4D8BECAA1BDFF0FB000A1462 /* Sources */,
 				4D8BECAB1BDFF0FB000A1462 /* Frameworks */,
 				4D8BECAC1BDFF0FB000A1462 /* CopyFiles */,
+				F8078FEC1C62FA0300E8F8A3 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RNFabricDigits;
+			name = RCTDigitsManager;
 			productName = RNFabricDigit;
-			productReference = 4D8BECAE1BDFF0FB000A1462 /* libRNFabricDigits.a */;
+			productReference = 4D8BECAE1BDFF0FB000A1462 /* libRCTDigitsManager.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +131,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4D8BECA91BDFF0FB000A1462 /* Build configuration list for PBXProject "RNFabricDigits" */;
+			buildConfigurationList = 4D8BECA91BDFF0FB000A1462 /* Build configuration list for PBXProject "RCTDigitsManager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -130,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4D8BECAD1BDFF0FB000A1462 /* RNFabricDigits */,
+				4D8BECAD1BDFF0FB000A1462 /* RCTDigitsManager */,
 			);
 		};
 /* End PBXProject section */
@@ -140,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDF81701BE0D8F400712308 /* RNFabricDigitsManager.m in Sources */,
+				4DDF81701BE0D8F400712308 /* RCTDigitsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +247,9 @@
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNFabricDigits;
+				PRODUCT_NAME = RCTDigitsManager;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
 			name = Debug;
 		};
@@ -248,15 +262,16 @@
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNFabricDigits;
+				PRODUCT_NAME = RCTDigitsManager;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4D8BECA91BDFF0FB000A1462 /* Build configuration list for PBXProject "RNFabricDigits" */ = {
+		4D8BECA91BDFF0FB000A1462 /* Build configuration list for PBXProject "RCTDigitsManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4D8BECB51BDFF0FB000A1462 /* Debug */,
@@ -265,7 +280,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4D8BECB71BDFF0FB000A1462 /* Build configuration list for PBXNativeTarget "RNFabricDigits" */ = {
+		4D8BECB71BDFF0FB000A1462 /* Build configuration list for PBXNativeTarget "RCTDigitsManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4D8BECB81BDFF0FB000A1462 /* Debug */,
