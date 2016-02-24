@@ -6,7 +6,7 @@
 
 Special thanks to the following people/projects:
 - [jpdriver](https://github.com/jpdriver) for his tutorial on [how to integrate Digits in a React-Native project](https://medium.com/p/getting-started-with-digits-and-react-native-f79b22439416).
-- [react-native-fabric-digits](https://github.com/JeanLebrument/react-native-fabric-digits) for providing the basis of this readme, project structure and iOS implementation
+- [thessem](https://github.com/thessem/react-native-fabric-digits) for providing the Android support
 - [react-native-digits](https://github.com/fixt/react-native-digits) for helping me figure out how to package the Android version.
 - [Corentin S.](http://stackoverflow.com/a/33563461) for providing the basis of the Android implementation in a Stack Overflow answer
 
