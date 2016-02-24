@@ -5,8 +5,10 @@
 'use strict';
 
 var React = require('react-native');
+
 var Digits = require('react-native-fabric-digits');
 var { DigitsLoginButton, DigitsLogoutButton } = Digits;
+
 var {
   AppRegistry,
   StyleSheet,
@@ -15,7 +17,7 @@ var {
   TouchableHighlight
 } = React;
 
-var MyDigitsDemo = React.createClass({
+var Test = React.createClass({
   getInitialState: function() {
     return { logged: false, error: false, response: {} };
   },
@@ -34,11 +36,6 @@ var MyDigitsDemo = React.createClass({
     var content = this.state.logged ? 
       (<View>
         <Text>
-          You're logged! {'\n\n'}
-          Phone number: {this.state.response.phoneNumber}{'\n'}
-          Email address: {this.state.response.emailAddress}{'\n'}
-          Email address verified: {this.state.response.emailAddressVerified ? "true" : "false"}{'\n'}
-          User ID: {this.state.response.userID}{'\n'}
           Auth Token: {this.state.response.authToken}{'\n'}
           Auth Token Secret: {this.state.response.authTokenSecret}{'\n\n'}
         </Text>
@@ -46,11 +43,11 @@ var MyDigitsDemo = React.createClass({
           completion={this.completion}
           text="Logout"
           buttonStyle={styles.DigitsAuthenticateButton}
-          textStyle={styles.DigitsAuthenticateButtonText}
-        />
+          textStyle={styles.DigitsAuthenticateButtonText}/>
       </View>) : (<DigitsLoginButton
         options={{
-          title: "Connect with your phone",
+          title: "Logging in is great",
+          phoneNumber: "+61",
           appearance: {
             backgroundColor: {
               hex: "#ffffff",
@@ -75,11 +72,9 @@ var MyDigitsDemo = React.createClass({
           }
         }}
         completion={this.completion}
-        text="Use my phone number"
+        text="Login (Do it)"
         buttonStyle={styles.DigitsAuthenticateButton}
-        textStyle={styles.DigitsAuthenticateButtonText}
-      />);
-
+        textStyle={styles.DigitsAuthenticateButtonText}/>);
     return (
       <View style={styles.container}>
         {error}
@@ -88,7 +83,6 @@ var MyDigitsDemo = React.createClass({
     );
   }
 });
-
 var styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -111,4 +105,4 @@ var styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('MyDigitsDemo', () => MyDigitsDemo);
+AppRegistry.registerComponent('Test', () => Test);

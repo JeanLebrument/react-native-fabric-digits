@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D8BECBE1BDFF2BA000A1462 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBB1BDFF2BA000A1462 /* DigitsKit.framework */; };
+		4D8BECBF1BDFF2BA000A1462 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBC1BDFF2BA000A1462 /* Fabric.framework */; };
+		4D8BECC01BDFF2BA000A1462 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8BECBD1BDFF2BA000A1462 /* TwitterCore.framework */; };
+		F80790201C6319A400E8F8A3 /* RCTDigitsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F807901F1C6319A400E8F8A3 /* RCTDigitsManager.h */; };
+		F80790221C6319B500E8F8A3 /* RCTDigitsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F80790211C6319B500E8F8A3 /* RCTDigitsManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4D8BECAC1BDFF0FB000A1462 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4D8BECAE1BDFF0FB000A1462 /* libRCTDigitsManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTDigitsManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D8BECBB1BDFF2BA000A1462 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
+		4D8BECBC1BDFF2BA000A1462 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		4D8BECBD1BDFF2BA000A1462 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		F807901F1C6319A400E8F8A3 /* RCTDigitsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTDigitsManager.h; sourceTree = "<group>"; };
+		F80790211C6319B500E8F8A3 /* RCTDigitsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTDigitsManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D8BECAB1BDFF0FB000A1462 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D8BECBE1BDFF2BA000A1462 /* DigitsKit.framework in Frameworks */,
+				4D8BECC01BDFF2BA000A1462 /* TwitterCore.framework in Frameworks */,
+				4D8BECBF1BDFF2BA000A1462 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D8BECA51BDFF0FB000A1462 = {
+			isa = PBXGroup;
+			children = (
+				F807901F1C6319A400E8F8A3 /* RCTDigitsManager.h */,
+				F80790211C6319B500E8F8A3 /* RCTDigitsManager.m */,
+				4D8BECBA1BDFF2AD000A1462 /* Frameworks */,
+				4D8BECAF1BDFF0FB000A1462 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D8BECAF1BDFF0FB000A1462 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D8BECAE1BDFF0FB000A1462 /* libRCTDigitsManager.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D8BECBA1BDFF2AD000A1462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D8BECBB1BDFF2BA000A1462 /* DigitsKit.framework */,
+				4D8BECBC1BDFF2BA000A1462 /* Fabric.framework */,
+				4D8BECBD1BDFF2BA000A1462 /* TwitterCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F8078FEC1C62FA0300E8F8A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80790201C6319A400E8F8A3 /* RCTDigitsManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4D8BECAD1BDFF0FB000A1462 /* RCTDigitsManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D8BECB71BDFF0FB000A1462 /* Build configuration list for PBXNativeTarget "RCTDigitsManager" */;
+			buildPhases = (
+				4D8BECAA1BDFF0FB000A1462 /* Sources */,
+				4D8BECAB1BDFF0FB000A1462 /* Frameworks */,
+				4D8BECAC1BDFF0FB000A1462 /* CopyFiles */,
+				F8078FEC1C62FA0300E8F8A3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RCTDigitsManager;
+			productName = RNFabricDigit;
+			productReference = 4D8BECAE1BDFF0FB000A1462 /* libRCTDigitsManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D8BECA61BDFF0FB000A1462 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Jean Lebrument";
+				TargetAttributes = {
+					4D8BECAD1BDFF0FB000A1462 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 4D8BECA91BDFF0FB000A1462 /* Build configuration list for PBXProject "RCTDigitsManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4D8BECA51BDFF0FB000A1462;
+			productRefGroup = 4D8BECAF1BDFF0FB000A1462 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D8BECAD1BDFF0FB000A1462 /* RCTDigitsManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D8BECAA1BDFF0FB000A1462 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80790221C6319B500E8F8A3 /* RCTDigitsManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4D8BECB51BDFF0FB000A1462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4D8BECB61BDFF0FB000A1462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D8BECB81BDFF0FB000A1462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../React",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RCTDigitsManager;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4D8BECB91BDFF0FB000A1462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../React",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RCTDigitsManager;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D8BECA91BDFF0FB000A1462 /* Build configuration list for PBXProject "RCTDigitsManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D8BECB51BDFF0FB000A1462 /* Debug */,
+				4D8BECB61BDFF0FB000A1462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D8BECB71BDFF0FB000A1462 /* Build configuration list for PBXNativeTarget "RCTDigitsManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D8BECB81BDFF0FB000A1462 /* Debug */,
+				4D8BECB91BDFF0FB000A1462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D8BECA61BDFF0FB000A1462 /* Project object */;
+}
