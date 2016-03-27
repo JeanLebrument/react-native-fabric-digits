@@ -16,7 +16,7 @@ var DigitsLoginButton = React.createClass({
       console.log("[Digits] Login Successful", responseData);
       this.props.completion(null, responseData);
     }).catch((error) => {
-      if(error.code != 1){
+      if(error && error.code != 1){
               console.error("[Digits] Login Error", error);
       }
       this.props.completion(error, null);
