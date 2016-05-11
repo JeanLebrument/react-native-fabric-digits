@@ -13,12 +13,15 @@ import com.digits.sdk.android.DigitsException;
 import com.digits.sdk.android.DigitsOAuthSigning;
 import com.digits.sdk.android.DigitsSession;
 
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.ReadableNativeMap;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -76,6 +79,15 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
     @ReactMethod
     public void logout() {
         Digits.getSessionManager().clearActiveSession();
+    }
+
+    @ReactMethod
+    public void sessionDetails(Callback callback) {
+        DigitsSession session = Digits.getSessionManager().getActiveSession();
+        WritableMap sessionData = new WritableNativeMap();
+        sessionData.putString("userId", new Long(session.getId()).toString());
+        sessionData.putString("phoneNumber", new Long(session.getPhoneNumber()).toString());
+        callback.invoke(sessionData);
     }
 
     private TwitterAuthConfig getTwitterAuthConfig() {

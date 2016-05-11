@@ -27,8 +27,14 @@ var Test = React.createClass({
       this.setState({ logged: false, error: true, response: {} });
     } else if (response) {
       var logged = JSON.stringify(response) === '{}' ? false : true;
-      this.setState({ logged: logged, error: false, response: response });
+      this.setState({ logged: logged, error: false, response: response }, this.getSessionDetails);
     }
+  },
+
+  getSessionDetails: function() {
+    this.refs.DigitsLoginButton.getSessionDetails(function(sessionDetails) {
+      console.log(sessionDetails);
+    });
   },
 
   render: function() {
@@ -45,6 +51,7 @@ var Test = React.createClass({
           buttonStyle={styles.DigitsAuthenticateButton}
           textStyle={styles.DigitsAuthenticateButtonText}/>
       </View>) : (<DigitsLoginButton
+        ref='DigitsLoginButton'
         options={{
           title: "Logging in is great",
           phoneNumber: "+61",

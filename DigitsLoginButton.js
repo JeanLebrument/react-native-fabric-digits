@@ -11,6 +11,16 @@ var DigitsLoginButton = React.createClass({
     textStyle: Text.propTypes.style,
   },
 
+  getSessionDetails(callback) {
+    DigitsManager.sessionDetails((error, sessionDetails) => {
+      if (error) {
+        console.error(error);
+      } else {
+        callback(sessionDetails);
+      }
+    });
+  },
+
   buttonPressed() {
     DigitsManager.launchAuthentication(this.props.options).then((responseData) => {
       console.log("[Digits] Login Successful", responseData);
