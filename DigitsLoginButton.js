@@ -1,5 +1,7 @@
-var React = require('react-native');
-var { TouchableHighlight, Text, PropTypes } = React;
+var React = require('react');
+var ReactNative = require('react-native');
+var { PropTypes } = React;
+var { TouchableHighlight, Text } = ReactNative;
 var DigitsManager = require("react-native").NativeModules.DigitsManager;
 
 var DigitsLoginButton = React.createClass({
