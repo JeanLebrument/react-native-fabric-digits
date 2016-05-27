@@ -50,7 +50,7 @@ dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   compile 'com.android.support:appcompat-v7:23.0.0'
   compile 'com.facebook.react:react-native:0.14.+'
-  compile project(':react-native-digits')           <--- ADD THIS
+  compile project(':react-native-fabric-digits')          <--- ADD THIS
 }
 ```
 
