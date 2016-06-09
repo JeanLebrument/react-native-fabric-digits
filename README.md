@@ -12,7 +12,7 @@ Special thanks to the following people/projects:
 
 ## Install
 
-1. `npm install proximaio/react-native-fabric-digits --save`
+1. `npm install JeanLebrument/react-native-fabric-digits --save`
 
 ### iOS procedure 
 1. Follow the usual Digits installation procedure on your project, including adding the frameworks and modifying any files
