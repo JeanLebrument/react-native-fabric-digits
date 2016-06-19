@@ -87,7 +87,7 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
         WritableMap sessionData = new WritableNativeMap();
         sessionData.putString("userId", new Long(session.getId()).toString());
         sessionData.putString("phoneNumber", new Long(session.getPhoneNumber()).toString());
-        callback.invoke(sessionData);
+        callback.invoke(null, sessionData);
     }
 
     private TwitterAuthConfig getTwitterAuthConfig() {
