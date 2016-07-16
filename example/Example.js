@@ -1,57 +1,65 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * @flow
  */
-'use strict';
 
-var React = require('react-native');
-
-var Digits = require('react-native-fabric-digits');
-var { DigitsLoginButton, DigitsLogoutButton } = Digits;
-
-var {
+import React, { Component } from 'react';
+import {
+  Alert,
   AppRegistry,
   StyleSheet,
   Text,
   View,
-  TouchableHighlight
-} = React;
+} from 'react-native';
 
-var Test = React.createClass({
-  getInitialState: function() {
-    return { logged: false, error: false, response: {} };
-  },
+const Digits = require('react-native-fabric-digits');
+const { DigitsLoginButton, DigitsLogoutButton } = Digits;
 
-  completion: function(error, response) {
+class Example extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      logged: false,
+      error: false,
+      response: {}
+    };
+    this.completion = this.completion.bind(this);
+    this.getSessionDetails = this.getSessionDetails.bind(this);
+  }
+
+  completion(error, response) {
     if (error && error.code !== 1) {
       this.setState({ logged: false, error: true, response: {} });
     } else if (response) {
-      var logged = JSON.stringify(response) === '{}' ? false : true;
+      const logged = JSON.stringify(response) === '{}' ? false : true;
       this.setState({ logged: logged, error: false, response: response }, this.getSessionDetails);
     }
-  },
+  }
 
-  getSessionDetails: function() {
-    this.refs.DigitsLoginButton.getSessionDetails(function(sessionDetails) {
-      console.log(sessionDetails);
-    });
-  },
+  getSessionDetails() {
+    if (this.state.logged) {
+      this.refs.DigitsLogoutButton.getSessionDetails(function(sessionDetails) {
+        Alert.alert('Success!', sessionDetails.phoneNumber);
+      });
+    }
+  }
 
-  render: function() {
-    var error = this.state.error ? <Text>An error occured.</Text> : null;
-    var content = this.state.logged ? 
-      (<View>
+  render() {
+    const error = this.state.error ? <Text>An error occured.</Text> : null;
+    const content = this.state.logged ?
+      (<View style={styles.container}>
         <Text>
-          Auth Token: {this.state.response.authToken}{'\n'}
-          Auth Token Secret: {this.state.response.authTokenSecret}{'\n\n'}
+          OAuth Token: {this.state.response['X-Verify-Credentials-Authorization']}
         </Text>
         <DigitsLogoutButton
+          ref="DigitsLogoutButton"
           completion={this.completion}
           text="Logout"
           buttonStyle={styles.DigitsAuthenticateButton}
           textStyle={styles.DigitsAuthenticateButtonText}/>
       </View>) : (<DigitsLoginButton
-        ref='DigitsLoginButton'
+        ref="DigitsLoginButton"
         options={{
           title: "Logging in is great",
           phoneNumber: "+61",
@@ -89,8 +97,9 @@ var Test = React.createClass({
       </View>
     );
   }
-});
-var styles = StyleSheet.create({
+}
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -102,14 +111,14 @@ var styles = StyleSheet.create({
     width: 230,
     backgroundColor: '#13988A',
     justifyContent: 'center',
-    borderRadius: 5
+    borderRadius: 5,
   },
   DigitsAuthenticateButtonText: {
     fontSize: 16,
     color: '#fff',
     alignSelf: 'center',
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 });
 
-AppRegistry.registerComponent('Test', () => Test);
+AppRegistry.registerComponent('Example', () => Example);
