@@ -1,21 +1,27 @@
-var React = require('react');
-var ReactNative = require('react-native');
-var { PropTypes } = React;
-var { TouchableHighlight, Text } = ReactNative;
-var DigitsManager = ReactNative.NativeModules.DigitsManager;
+import React, { Component } from 'react';
+import { NativeModule, Text, TouchableHighlight } from 'react-native';
 
-var DigitsLogoutButton = React.createClass({
-  propTypes: {
-    completion: PropTypes.func.isRequired,
-    text: PropTypes.string.isRequired,
-    buttonStyle: TouchableHighlight.propTypes.style,
-    textStyle: Text.propTypes.style,
-  },
+class DigitsLogoutButton extends Component {
+  constructor(props) {
+    super(props);
+    this.buttonPressed = this.buttonPressed.bind(this);
+    this.getSessionDetails = this.getSessionDetails.bind(this);
+  }
+
+  getSessionDetails(callback) {
+    NativeModules.DigitsManager.sessionDetails((error, sessionDetails) => {
+      if (error) {
+        console.error(error);
+      } else {
+        callback(sessionDetails);
+      }
+    });
+  }
 
   buttonPressed() {
-    DigitsManager.logout();
+    NativeModules.DigitsManager.logout();
     this.props.completion(null, {});
-  },
+  }
 
   render() {
     return (
@@ -24,6 +30,6 @@ var DigitsLogoutButton = React.createClass({
       </TouchableHighlight>
     );
   }
-});
+}
 
 module.exports = DigitsLogoutButton;

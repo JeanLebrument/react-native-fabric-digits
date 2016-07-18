@@ -10,11 +10,27 @@ Special thanks to the following people/projects:
 - [react-native-digits](https://github.com/fixt/react-native-digits) for helping me figure out how to package the Android version.
 - [Corentin S.](http://stackoverflow.com/a/33563461) for providing the basis of the Android implementation in a Stack Overflow answer
 
+## Before Installing
+
+1. Open your React Native app in Xcode / Android Studio / similar
+2. Install DigitsKit (the same way you would for non-React Native projects)
+
+For iOS apps, you can install DigitsKit either through the [Fabric OS X app](https://fabric.io/downloads/apple) or [CocoaPods](https://fabric.io/kits/ios/digits/install)
+
+For Android apps, you can install DigitsKit either through the [Fabric IDE plugin](https://fabric.io/downloads/android) or [Gradle](https://fabric.io/kits/android/digits/install)
+
 ## Install
 
-1. `npm install JeanLebrument/react-native-fabric-digits --save`
+`npm install JeanLebrument/react-native-fabric-digits --save`
 
-### iOS procedure 
+## Either Link with RNPM... (Automatic)
+
+1. `npm install rnpm -g --save`
+2. `rnpm link react-native-fabric-digits`
+
+## ...or Link (Manual)
+
+### iOS procedure
 1. Follow the usual Digits installation procedure on your project, including adding the frameworks and modifying any files
 2. In the XCode's "Project navigator", right click on your project's Libraries folder ➜ `Add Files to <...>`
 3. Go to `node_modules` ➜ `react-native-fabric-digits` ➜ `ios` -> select the `RCTDigitsManager.xcodeproj`
@@ -84,121 +100,26 @@ Add this inside the `application` tag.
 
 ## Usage
 
-This package provide three classes: `DigitsLoginButton`, and `DigitsLogoutButton`.
+This package provide two classes: `DigitsLoginButton` and `DigitsLogoutButton`. You should `render` the version that corresponds to the Log In state in your app.
 
-You can simply use the login and logout buttons provided to trigger the `authentication` or `logout` flows as bellow: 
+Start with `DigitsLoginButton`, then when a user has successfully logged in, swap this out for `DigitsLogoutButton`.
 
-```javascript
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
+Have a look at the Example, which illustrates all the features.
 
-var React = require('react-native');
+## FAQ
 
-var Digits = require('react-native-fabric-digits');
-var { DigitsLoginButton, DigitsLogoutButton } = Digits;
+### What's Digits?
+* please see https://get.digits.com. Digits is part of Fabric -- a suite of tools for building mobile apps from Twitter.
 
-var {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  TouchableHighlight
-} = React;
+### Does Digits officially support React Native?
+* Not directly on its own. Officially, DigitsKit only supports the native languages (Objective C, Swift, and Java).
+* However, React Native has the ability to expose native modules to JavaScript components, which is exactly what this library does.
 
-var Test = React.createClass({
-  getInitialState: function() {
-    return { logged: false, error: false, response: {} };
-  },
+### Can I see the OAuth details that the DigitsAPI returns?
+* In our example, the returned OAuth `response` is put into the component state.
 
-  completion: function(error, response) {
-    if (error && error.code !== 1) {
-      this.setState({ logged: false, error: true, response: {} });
-    } else if (response) {
-      var logged = JSON.stringify(response) === '{}' ? false : true;
-      this.setState({ logged: logged, error: false, response: response });
-    }
-  },
-
-  render: function() {
-    var error = this.state.error ? <Text>An error occured.</Text> : null;
-    var content = this.state.logged ? 
-      (<View>
-        <Text>
-          Auth Token: {this.state.response.authToken}{'\n'}
-          Auth Token Secret: {this.state.response.authTokenSecret}{'\n\n'}
-        </Text>
-        <DigitsLogoutButton
-          completion={this.completion}
-          text="Logout"
-          buttonStyle={styles.DigitsAuthenticateButton}
-          textStyle={styles.DigitsAuthenticateButtonText}/>
-      </View>) : (<DigitsLoginButton
-        options={{
-          title: "Logging in is great",
-          phoneNumber: "+61",
-          appearance: {
-            backgroundColor: {
-              hex: "#ffffff",
-              alpha: 1.0
-            },
-            accentColor: {
-              hex: "#43a16f",
-              alpha: 0.7
-            },
-            headerFont: {
-              name: "Arial",
-              size: 16
-            },
-            labelFont: {
-              name: "Helvetica",
-              size: 18
-            },
-            bodyFont: {
-              name: "Helvetica",
-              size: 16
-            }
-          }
-        }}
-        completion={this.completion}
-        text="Login (Do it)"
-        buttonStyle={styles.DigitsAuthenticateButton}
-        textStyle={styles.DigitsAuthenticateButtonText}/>);
-    return (
-      <View style={styles.container}>
-        {error}
-        {content}
-      </View>
-    );
-  }
-});
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  DigitsAuthenticateButton: {
-    height: 50,
-    width: 230,
-    backgroundColor: '#13988A',
-    justifyContent: 'center',
-    borderRadius: 5
-  },
-  DigitsAuthenticateButtonText: {
-    fontSize: 16,
-    color: '#fff',
-    alignSelf: 'center',
-    fontWeight: 'bold'
-  }
-});
-
-AppRegistry.registerComponent('Test', () => Test);
-```
-
+### Can I see the phone number the user entered?
+* Yes! Once a user has logged in, you can call `getSessionDetails()` to get the sessionId and phoneNumber.
 
 ## Licence
 

@@ -1,39 +1,23 @@
-var React = require('react');
-var ReactNative = require('react-native');
-var { PropTypes } = React;
-var { TouchableHighlight, Text } = ReactNative;
-var DigitsManager = require("react-native").NativeModules.DigitsManager;
+import React, { Component } from 'react';
+import { NativeModules, Text, TouchableHighlight } from 'react-native';
 
-var DigitsLoginButton = React.createClass({
-  propTypes: {
-    options: PropTypes.object.isRequired,
-    completion: PropTypes.func.isRequired,
-    text: PropTypes.string.isRequired,
-    buttonStyle: TouchableHighlight.propTypes.style,
-    textStyle: Text.propTypes.style,
-  },
-
-  getSessionDetails(callback) {
-    DigitsManager.sessionDetails((error, sessionDetails) => {
-      if (error) {
-        console.error(error);
-      } else {
-        callback(sessionDetails);
-      }
-    });
-  },
+class DigitsLoginButton extends Component {
+  constructor(props) {
+    super(props);
+    this.buttonPressed = this.buttonPressed.bind(this);
+  }
 
   buttonPressed() {
-    DigitsManager.launchAuthentication(this.props.options).then((responseData) => {
+    NativeModules.DigitsManager.launchAuthentication(this.props.options).then((responseData) => {
       console.log("[Digits] Login Successful", responseData);
       this.props.completion(null, responseData);
     }).catch((error) => {
       if(error && error.code != 1){
-              console.error("[Digits] Login Error", error);
+        console.error("[Digits] Login Error", error);
       }
       this.props.completion(error, null);
     });
-  },
+  }
 
   render() {
     return (
@@ -42,6 +26,6 @@ var DigitsLoginButton = React.createClass({
       </TouchableHighlight>
     );
   }
-});
+}
 
 module.exports = DigitsLoginButton;
