@@ -4,7 +4,19 @@ import { NativeModules, Text, TouchableHighlight } from 'react-native';
 class DigitsLoginButton extends Component {
   constructor(props) {
     super(props);
+
     this.buttonPressed = this.buttonPressed.bind(this);
+    this.getSessionDetails = this.getSessionDetails.bind(this);
+  }
+
+  getSessionDetails(callback) {
+    NativeModules.DigitsManager.sessionDetails((error, sessionDetails) => {
+      if (error) {
+        console.error(error);
+      } else {
+        callback(sessionDetails);
+      }
+    });
   }
 
   buttonPressed() {
