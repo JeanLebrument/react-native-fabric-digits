@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { NativeModule, Text, TouchableHighlight } from 'react-native';
+import { NativeModules, Text, TouchableHighlight } from 'react-native';
 
 class DigitsLogoutButton extends Component {
   constructor(props) {
     super(props);
+
     this.buttonPressed = this.buttonPressed.bind(this);
     this.getSessionDetails = this.getSessionDetails.bind(this);
   }
