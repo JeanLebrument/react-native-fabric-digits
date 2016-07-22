@@ -113,11 +113,15 @@ RCT_EXPORT_METHOD(logout) {
 
 RCT_EXPORT_METHOD(sessionDetails:(RCTResponseSenderBlock)callback) {
     DGTSession* session =[[Digits sharedInstance] session];
-    NSDictionary *events = @{
-                          @"userID": session.userID,
-                          @"phoneNumber": session.phoneNumber,
-                          };
-    callback(@[[NSNull null], events]);
+    if (session) {
+        NSDictionary *events = @{
+                                 @"userID": session.userID,
+                                 @"phoneNumber": session.phoneNumber,
+                                 };
+        callback(@[[NSNull null], events]);
+    } else {
+        callback(@[[NSNull null], [NSNull null]]);
+    }
 }
 
 @end
