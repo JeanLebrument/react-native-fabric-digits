@@ -40,4 +40,8 @@ class DigitsLoginButton extends Component {
   }
 }
 
+DigitsLoginButton.defaultProps = {
+  highlightColor: 'black',
+};
+
 module.exports = DigitsLoginButton;

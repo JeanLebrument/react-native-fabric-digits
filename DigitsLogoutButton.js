@@ -26,11 +26,15 @@ class DigitsLogoutButton extends Component {
 
   render() {
     return (
-      <TouchableHighlight style={this.props.buttonStyle} underlayColor={this.props.highligtColor} onPress={this.buttonPressed} >
+      <TouchableHighlight style={this.props.buttonStyle} underlayColor={this.props.highlightColor} onPress={this.buttonPressed} >
         <Text style={this.props.textStyle}>{this.props.text}</Text>
       </TouchableHighlight>
     );
   }
 }
+
+DigitsLogoutButton.defaultProps = {
+  highlightColor: 'black',
+};
 
 module.exports = DigitsLogoutButton;
