@@ -19,6 +19,8 @@ For iOS apps, you can install DigitsKit either through the [Fabric OS X app](htt
 
 For Android apps, you can install DigitsKit either through the [Fabric IDE plugin](https://fabric.io/downloads/android) or [Gradle](https://fabric.io/kits/android/digits/install)
 
+Don't forget about initializing Fabric using `with` method!
+
 ## Install
 
 `npm install JeanLebrument/react-native-fabric-digits --save`
@@ -28,14 +30,13 @@ For Android apps, you can install DigitsKit either through the [Fabric IDE plugi
 1. `npm install rnpm -g --save`
 2. `rnpm link react-native-fabric-digits`
 
-Follow the usual Digits installation procedure on your project, including adding the frameworks and modifying any files. Don't forget about initializing Fabric using `with` in you native code!
-
 ## ...or Link (Manual)
 
 ### iOS procedure
-1. In the XCode's "Project navigator", right click on your project's Libraries folder ➜ `Add Files to <...>`
-2. Go to `node_modules` ➜ `react-native-fabric-digits` ➜ `ios` -> select the `RCTDigitsManager.xcodeproj`
-3. Go to `Build Phases` tab of your project, select a target, open `Link Binary With Libraries`, click on `+` and add `libRCTDigitsManager.a`
+1. Follow the usual Digits installation procedure on your project, including adding the frameworks and modifying any files.
+2. In the XCode's "Project navigator", right click on your project's Libraries folder ➜ `Add Files to <...>`
+3. Go to `node_modules` ➜ `react-native-fabric-digits` ➜ `ios` -> select the `RCTDigitsManager.xcodeproj`
+4. Go to `Build Phases` tab of your project, select a target, open `Link Binary With Libraries`, click on `+` and add `libRCTDigitsManager.a`
 
 ### Android procedure
 

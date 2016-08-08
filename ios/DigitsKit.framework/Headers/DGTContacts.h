@@ -6,6 +6,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DGTContactAccessAuthorizationStatus.h"
+#import "DGTContactsDebugConfiguration.h"
 
 @class DGTAppearance;
 @class DGTContactsUploadResult;
@@ -37,14 +38,24 @@ typedef void (^DGTDeleteAllUploadedContactsCompletion)(NSError *error);
 @interface DGTContacts : NSObject
 
 /**
+ *  Configuration to override Contacts behavior. e.g. provide a list of contacts that will be used instead of making a real upload request.
+ */
+@property (nonatomic, strong) DGTContactsDebugConfiguration *uploadDebugOverrides;
+
+/**
+ *  Configuration to override Contacts behavior. e.g. provide a list of contacts that will be used instead of making a real lookup request.
+ */
+@property (nonatomic, strong) DGTContactsDebugConfiguration *lookupDebugOverrides;
+
+/**
  *  @return The user's Address Book authorization status for this app.
  */
 + (DGTContactAccessAuthorizationStatus)contactsAccessAuthorizationStatus;
 
 /**
- *  Returns an instance of DGTUsers that can make authenticated requests using the given user session. Subsequent calls to upload, lookup, and delete contacts will be scoped to the user for this session.
+ *  Returns an instance of DGTContacts that can make authenticated requests using the given user session. Subsequent calls to upload, lookup, and delete contacts will be scoped to the user for this session.
  *
- *  @return an instance of DGTUsers
+ *  @return an instance of DGTContacts
  *  @param  userSession  (required) An authenticated user session, such as from `[[Digits sharedInstance] session]`.
  */
 - (instancetype)initWithUserSession:(DGTSession *)userSession;

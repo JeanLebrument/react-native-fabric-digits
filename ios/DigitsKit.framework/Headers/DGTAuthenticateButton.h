@@ -4,8 +4,8 @@
 //  Copyright (c) 2015 Twitter. All rights reserved.
 //
 
+#import <DigitsKit/DGTSession.h>
 #import <UIKit/UIKit.h>
-#import "DGTSession.h"
 
 @class DGTAppearance;
 

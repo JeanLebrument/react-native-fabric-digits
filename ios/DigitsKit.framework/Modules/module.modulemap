@@ -5,14 +5,21 @@ framework module DigitsKit {
     module * { export * }
 
     link framework "AddressBook"
+    link framework "SafariServices"
 
+    header "DGTAPIClient.h"
     header "DGTAppearance.h"
+    header "DGTAuthEventDelegate.h"
+    header "DGTAuthEventDetails.h"
     header "DGTAuthenticateButton.h"
     header "DGTAuthenticationConfiguration.h"
     header "DGTCompletionViewController.h"
     header "DGTContactAccessAuthorizationStatus.h"
     header "DGTContacts.h"
+    header "DGTContactsDebugConfiguration.h"
+    header "DGTContactsEventDelegate.h"
     header "DGTContactsUploadResult.h"
+    header "DGTDebugConfiguration.h"
     header "DGTErrors.h"
     header "DGTOAuthSigning.h"
     header "DGTSession.h"
