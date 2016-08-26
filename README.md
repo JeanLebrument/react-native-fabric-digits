@@ -97,6 +97,28 @@ Add this inside the `application` tag.
   android:value="YOUR_API_SECRET" />
 ```
 
+### Styling on Android
+
+On Android, you have to add a custom Digits Theme in your app's `styles` resource.
+
+#### In `android/app/src/main/res/values/styles.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- your other app styles here -->
+
+  <style name="CustomDigitsTheme" parent="android:Theme.Material.Light">
+    <item name="android:textColorPrimary">@android:color/black</item>
+    <item name="android:textColorSecondary">@android:color/darker_gray</item>
+    <item name="android:windowBackground">@android:color/white</item>
+    <item name="android:textColorLink">#ff398622</item>
+    <item name="android:colorAccent">#ff398622</item>
+  </style>
+</resources>
+```
+
+See the Digits Android Theming docs for more information: [Digits Android Theming](https://docs.fabric.io/android/digits/theming.html#customize-the-theme)
 
 ## Usage
 
