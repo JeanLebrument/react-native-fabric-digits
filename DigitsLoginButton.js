@@ -4,7 +4,19 @@ import { NativeModules, Text, TouchableHighlight } from 'react-native';
 class DigitsLoginButton extends Component {
   constructor(props) {
     super(props);
+
     this.buttonPressed = this.buttonPressed.bind(this);
+    this.getSessionDetails = this.getSessionDetails.bind(this);
+  }
+
+  getSessionDetails(callback) {
+    NativeModules.DigitsManager.sessionDetails((error, sessionDetails) => {
+      if (error) {
+        console.error(error);
+      } else {
+        callback(sessionDetails);
+      }
+    });
   }
 
   buttonPressed() {
@@ -21,11 +33,15 @@ class DigitsLoginButton extends Component {
 
   render() {
     return (
-      <TouchableHighlight style={this.props.buttonStyle} onPress={this.buttonPressed} >
+      <TouchableHighlight style={this.props.buttonStyle} underlayColor={this.props.highlightColor} onPress={this.buttonPressed} >
         <Text style={this.props.textStyle}>{this.props.text}</Text>
       </TouchableHighlight>
     );
   }
 }
+
+DigitsLoginButton.defaultProps = {
+  highlightColor: 'black',
+};
 
 module.exports = DigitsLoginButton;
