@@ -8,11 +8,9 @@ import android.util.Log;
 import com.digits.sdk.android.AuthCallback;
 import com.digits.sdk.android.Digits;
 import com.digits.sdk.android.DigitsAuthConfig;
-import com.digits.sdk.android.DigitsClient;
 import com.digits.sdk.android.DigitsException;
 import com.digits.sdk.android.DigitsOAuthSigning;
 import com.digits.sdk.android.DigitsSession;
-
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.Promise;
@@ -20,22 +18,18 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.bridge.ReadableNativeMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
-
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterAuthToken;
 import com.twitter.sdk.android.core.TwitterCore;
 
 import java.util.Map;
 
-import io.fabric.sdk.android.Fabric;
-
 public class DigitsManager extends ReactContextBaseJavaModule implements LifecycleEventListener, AuthCallback {
 
-    private static final String META_DATA_KEY = "io.fabric.ApiKey";
-    private static final String META_DATA_SECRET = "io.fabric.ApiSecret";
+    private static final String META_DATA_KEY = "io.Digits.ApiKey";
+    private static final String META_DATA_SECRET = "io.Digits.ApiSecret";
     private static final String TAG = "RCTDigits";
 
     private boolean paused = false;
@@ -65,8 +59,8 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
 
         String phoneNumber = options.hasKey("phoneNumber") ? options.getString("phoneNumber") : "";
 
-        TwitterAuthConfig authConfig = getTwitterAuthConfig();
-        Fabric.with(getReactApplicationContext(), new TwitterCore(authConfig), new Digits());
+        // Check for Twitter config
+        getTwitterAuthConfig();
 
         DigitsAuthConfig.Builder digitsAuthConfigBuilder = new DigitsAuthConfig.Builder()
                 .withAuthCallBack(this)
