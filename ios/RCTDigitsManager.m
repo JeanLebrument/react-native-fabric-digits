@@ -78,7 +78,7 @@ RCT_REMAP_METHOD(launchAuthentication,
                  rejecter:(RCTPromiseRejectBlock)reject) {
 
     DGTAppearance *appearance = [[DGTAppearance alloc] init];
-    DGTAuthenticationConfiguration *configuration = [[DGTAuthenticationConfiguration alloc] initWithAccountFields:(options[@"email"]) ? DDGTAccountFieldsEmail : DGTAccountFieldsDefaultOptionMask];
+    DGTAuthenticationConfiguration *configuration = [[DGTAuthenticationConfiguration alloc] initWithAccountFields:(options[@"email"]) ? DGTAccountFieldsEmail : DGTAccountFieldsDefaultOptionMask];
 
     [self setColorToApparence:appearance withKeyApparence:@"backgroundColor" fromOptions:options withKeyHex:@"appearance.backgroundColor.hex" andKeyAlpha:@"appearance.backgroundColor.alpha"];
     [self setColorToApparence:appearance withKeyApparence:@"accentColor" fromOptions:options withKeyHex:@"appearance.accentColor.hex" andKeyAlpha:@"appearance.accentColor.alpha"];
