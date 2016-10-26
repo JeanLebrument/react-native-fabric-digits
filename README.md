@@ -120,7 +120,19 @@ On Android, you have to add a custom Digits Theme in your app's `styles` resourc
 </resources>
 ```
 
-See the Digits Android Theming docs for more information: [Digits Android Theming](https://docs.fabric.io/android/digits/theming.html#customize-the-theme)
+For full supported attributes, see: [Customize the Theme](https://docs.fabric.io/android/digits/theming.html#customize-the-theme)
+
+Starting from Digits SDK 2.0, You have to apply your customized theme manually before calling `Fabric.with()`.
+
+```java
+Context context = this;  // a valid Context
+Digits digits = new Digits.Builder()
+    .withTheme(R.styles.CustomDigitsTheme)  // setup customized theme
+    .build();
+Fabric.with(context, digits);  // Initialize Digits
+```
+
+See the Digits Android Theming docs for more information: [Digits Android Theming](https://docs.fabric.io/android/digits/theming.html#theming)
 
 ## Usage
 
