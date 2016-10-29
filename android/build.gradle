@@ -37,7 +37,5 @@ repositories {
 dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.facebook.react:react-native:0.19.+'
-    compile('com.digits.sdk.android:digits:1.11.2@aar') {
-        transitive = true;
-    }
+    compile 'com.digits.sdk.android:digits:2.0.2'
 }
