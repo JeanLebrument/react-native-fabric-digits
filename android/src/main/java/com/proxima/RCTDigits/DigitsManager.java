@@ -11,18 +11,26 @@ import com.digits.sdk.android.Digits;
 import com.digits.sdk.android.DigitsException;
 import com.digits.sdk.android.DigitsOAuthSigning;
 import com.digits.sdk.android.DigitsSession;
+import com.digits.sdk.android.models.Contacts;
+import com.digits.sdk.android.models.DigitsUser;
+
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.bridge.WritableNativeMap;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterAuthToken;
 import com.twitter.sdk.android.core.TwitterCore;
+import com.twitter.sdk.android.core.TwitterException;
 
 import java.util.Map;
 
@@ -79,12 +87,50 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
     }
 
     @ReactMethod
+    public void uploadContacts() {
+        Digits.uploadContacts();
+    }
+
+    @ReactMethod
+    public void getIdentifier() {
+        Digits.getInstance().getIdentifier();
+    }
+
+    @ReactMethod
+    public void findFriends(final Callback callback) {
+        Digits.findFriends(new com.twitter.sdk.android.core.Callback<Contacts>() {
+
+            @Override
+            public void success(com.twitter.sdk.android.core.Result<Contacts> result) {
+                WritableMap sessionData = new WritableNativeMap();
+                WritableArray users = new WritableNativeArray();
+                if (result.data.users != null) {
+                    // Process data
+                    for (DigitsUser user : result.data.users) {
+                        users.pushString(user.idStr);
+                    }
+                }
+                sessionData.putArray("friends", users);
+                callback.invoke(null, sessionData);
+            }
+
+            @Override
+            public void failure(TwitterException exception) {
+                // Show error
+                callback.invoke(true);
+            }
+        });
+    }
+
+    @ReactMethod
     public void sessionDetails(Callback callback) {
         DigitsSession session = Digits.getActiveSession();
         if (session != null) {
             WritableMap sessionData = new WritableNativeMap();
             sessionData.putString("userId", new Long(session.getId()).toString());
             sessionData.putString("phoneNumber", new Long(session.getPhoneNumber()).toString());
+            sessionData.putBoolean("isValidUser", session.isValidUser());
+
             callback.invoke(null, sessionData);
         } else {
             callback.invoke(null, null);
