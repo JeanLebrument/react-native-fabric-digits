@@ -67,6 +67,10 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
                 .withPhoneNumber(phoneNumber)
                 .withThemeResId(R.style.CustomDigitsTheme);
 
+        if (options.hasKey("email")) {
+          digitsAuthConfigBuilder.withEmailCollection();
+        }
+
         Digits.authenticate(digitsAuthConfigBuilder.build());
     }
 
