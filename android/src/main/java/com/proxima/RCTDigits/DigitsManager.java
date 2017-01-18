@@ -34,7 +34,6 @@ import com.twitter.sdk.android.core.TwitterException;
 
 import java.util.Map;
 
-import io.fabric.sdk.android.Fabric;
 
 public class DigitsManager extends ReactContextBaseJavaModule implements LifecycleEventListener, AuthCallback {
 
@@ -70,8 +69,7 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
         String phoneNumber = options.hasKey("phoneNumber") ? options.getString("phoneNumber") : "";
 
         // Check for Twitter config
-        TwitterAuthConfig authConfig = getTwitterAuthConfig();
-        Fabric.with(getReactApplicationContext(), new TwitterCore(authConfig), new Digits());
+        getTwitterAuthConfig();
 
         AuthConfig.Builder builder = new AuthConfig.Builder()
                 .withAuthCallBack(this)
