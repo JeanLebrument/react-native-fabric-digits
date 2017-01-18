@@ -34,6 +34,8 @@ import com.twitter.sdk.android.core.TwitterException;
 
 import java.util.Map;
 
+import io.fabric.sdk.android.Fabric;
+
 public class DigitsManager extends ReactContextBaseJavaModule implements LifecycleEventListener, AuthCallback {
 
     private static final String META_DATA_KEY = "io.Digits.ApiKey";
@@ -68,7 +70,8 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
         String phoneNumber = options.hasKey("phoneNumber") ? options.getString("phoneNumber") : "";
 
         // Check for Twitter config
-        getTwitterAuthConfig();
+        TwitterAuthConfig authConfig = getTwitterAuthConfig();
+        Fabric.with(getReactApplicationContext(), new TwitterCore(authConfig), new Digits());
 
         AuthConfig.Builder builder = new AuthConfig.Builder()
                 .withAuthCallBack(this)
@@ -128,9 +131,8 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
         if (session != null) {
             WritableMap sessionData = new WritableNativeMap();
             sessionData.putString("userId", new Long(session.getId()).toString());
-            sessionData.putString("phoneNumber", new Long(session.getPhoneNumber()).toString());
             sessionData.putBoolean("isValidUser", session.isValidUser());
-
+            sessionData.putString("phoneNumber", session.getPhoneNumber().replaceAll("[^0-9]", ""));
             callback.invoke(null, sessionData);
         } else {
             callback.invoke(null, null);
