@@ -63,7 +63,7 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
 
         // Check for Twitter config
         TwitterAuthConfig authConfig = getTwitterAuthConfig();
-        Fabric.with(getReactApplicationContext(), new TwitterCore(authConfig), new Digits());
+        Fabric.with(getReactApplicationContext(), new TwitterCore(authConfig), new Digits.Builder().build());
 
         AuthConfig.Builder digitsAuthConfigBuilder = new AuthConfig.Builder()
                 .withAuthCallBack(this)
@@ -152,6 +152,7 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
             return;
         }
 
+
         if (digitsSession != null) {
             TwitterAuthConfig authConfig = TwitterCore.getInstance().getAuthConfig();
             TwitterAuthToken authToken = (TwitterAuthToken) digitsSession.getAuthToken();
@@ -164,13 +165,12 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
             }
 
             promise.resolve(authHeadersNativeMap);
+            promise = null;
         } else if (digitsException != null) {
             promise.reject(digitsException.toString());
-        } else {
-            promise.reject("Authentification failed without exception.");
+            promise = null;
         }
 
-        promise = null;
         digitsSession = null;
         digitsException = null;
         getReactApplicationContext().removeLifecycleEventListener(this);
