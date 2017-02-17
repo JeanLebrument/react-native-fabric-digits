@@ -59,7 +59,8 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
         getReactApplicationContext().addLifecycleEventListener(this);
         this.promise = promise;
 
-        String phoneNumber = options.hasKey("phoneNumber") ? options.getString("phoneNumber") : "";
+        String phoneNumber = options != null && options.hasKey("phoneNumber") ? 
+            options.getString("phoneNumber") : "";
 
         // Check for Twitter config
         TwitterAuthConfig authConfig = getTwitterAuthConfig();
@@ -69,7 +70,7 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
                 .withAuthCallBack(this)
                 .withPhoneNumber(phoneNumber);
 
-        if (options.hasKey("email")) {
+        if (options != null && options.hasKey("email")) {
           digitsAuthConfigBuilder.withEmailCollection();
         }
 
