@@ -114,9 +114,20 @@ RCT_EXPORT_METHOD(logout) {
 RCT_EXPORT_METHOD(sessionDetails:(RCTResponseSenderBlock)callback) {
     DGTSession* session =[[Digits sharedInstance] session];
     if (session) {
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[^0-9]"
+                                                                               options:NSRegularExpressionCaseInsensitive
+                                                                                 error:nil];
+        NSString *phoneNumber = [regex stringByReplacingMatchesInString:session.phoneNumber
+                                                                options:0
+                                                                  range:NSMakeRange(0, session.phoneNumber.length)
+                                                           withTemplate:@""];
         NSDictionary *events = @{
+                                 @"authToken": session.authToken,
+                                 @"authTokenSecret": session.authTokenSecret,
                                  @"userID": session.userID,
-                                 @"phoneNumber": session.phoneNumber,
+                                 @"phoneNumber": phoneNumber,
+                                 @"emailAddress": (session.emailAddress ? session.emailAddress : @""),
+                                 @"emailAddressIsVerified": @(session.emailAddressIsVerified)
                                  };
         callback(@[[NSNull null], events]);
     } else {
