@@ -42,6 +42,10 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
 
     public DigitsManager(ReactApplicationContext reactContext) {
         super(reactContext);
+
+        // Check for Twitter config
+        TwitterAuthConfig authConfig = getTwitterAuthConfig();
+        Fabric.with(getReactApplicationContext(), new TwitterCore(authConfig), new Digits.Builder().build());
     }
 
     @Override
@@ -59,12 +63,8 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
         getReactApplicationContext().addLifecycleEventListener(this);
         this.promise = promise;
 
-        String phoneNumber = options != null && options.hasKey("phoneNumber") ? 
+        String phoneNumber = options != null && options.hasKey("phoneNumber") ?
             options.getString("phoneNumber") : "";
-
-        // Check for Twitter config
-        TwitterAuthConfig authConfig = getTwitterAuthConfig();
-        Fabric.with(getReactApplicationContext(), new TwitterCore(authConfig), new Digits.Builder().build());
 
         AuthConfig.Builder digitsAuthConfigBuilder = new AuthConfig.Builder()
                 .withAuthCallBack(this)
@@ -87,8 +87,12 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
         DigitsSession session = Digits.getActiveSession();
         if (session != null) {
             WritableMap sessionData = new WritableNativeMap();
+            sessionData.putString("authToken", session.getAuthToken().token);
+            sessionData.putString("authTokenSecret", session.getAuthToken().secret);
             sessionData.putString("userId", new Long(session.getId()).toString());
             sessionData.putString("phoneNumber", session.getPhoneNumber().replaceAll("[^0-9]", ""));
+            sessionData.putString("emailAddress", session.getEmail().address);
+            sessionData.putBoolean("emailAddressIsVerified", session.getEmail().verified);
             callback.invoke(null, sessionData);
         } else {
             callback.invoke(null, null);
