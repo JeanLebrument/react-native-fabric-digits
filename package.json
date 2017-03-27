@@ -1,6 +1,6 @@
 {
   "name": "react-native-fabric-digits",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "Fabric Digits wrapper to use it in React-Native",
   "main": "index.js",
   "directories": {

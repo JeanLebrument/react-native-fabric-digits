@@ -111,6 +111,12 @@ RCT_EXPORT_METHOD(logout) {
     [[Digits sharedInstance] logOut];
 }
 
+RCT_EXPORT_METHOD(enableSandbox) {
+    Digits *digits = [Digits sharedInstance];
+    DGTSession *session = [DGTDebugConfiguration defaultDebugSession];
+    digits.debugOverrides = [[DGTDebugConfiguration alloc] initSuccessStateWithDigitsSession:session];
+}
+
 RCT_EXPORT_METHOD(sessionDetails:(RCTResponseSenderBlock)callback) {
     DGTSession* session =[[Digits sharedInstance] session];
     if (session) {

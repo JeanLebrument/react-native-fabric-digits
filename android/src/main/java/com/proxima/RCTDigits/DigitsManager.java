@@ -83,6 +83,11 @@ public class DigitsManager extends ReactContextBaseJavaModule implements Lifecyc
     }
 
     @ReactMethod
+    public void enableSandbox() {
+        Digits.enableSandbox();
+    }
+
+    @ReactMethod
     public void sessionDetails(Callback callback) {
         DigitsSession session = Digits.getActiveSession();
         if (session != null) {
