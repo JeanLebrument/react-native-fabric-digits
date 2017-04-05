@@ -124,7 +124,7 @@ RCT_EXPORT_METHOD(sessionDetails:(RCTResponseSenderBlock)callback) {
         NSDictionary *events = @{
                                  @"authToken": session.authToken,
                                  @"authTokenSecret": session.authTokenSecret,
-                                 @"userID": session.userID,
+                                 @"userId": session.userID,
                                  @"phoneNumber": phoneNumber,
                                  @"emailAddress": (session.emailAddress ? session.emailAddress : @""),
                                  @"emailAddressIsVerified": @(session.emailAddressIsVerified)
